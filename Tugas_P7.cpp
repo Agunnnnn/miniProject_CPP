@@ -12,28 +12,29 @@ void kalkulasi(proses_fcfs data) {
     int seek_count = 0;
     int head = data.head;
 
-    cout << "=== HASILtes ===" << endl ;
+    cout << "=== HASIL DARI TES ===" << endl ;
     for (int i = 0; i < data.jumlah; i++) {
         seek_count += abs(data.request[i] - head);
         head = data.request[i];
         cout << data.request[i] << ","  ;
     }
 
-    cout << "Pejumlahan Pengurangan hasil: " << seek_count << endl;
+    cout << "Hasil Dari Perhitungan Dikurang Dan Di Tambah : " << seek_count << endl;
+    cout << "================================================"<< endl;
 
 }
 
 int banyak_data() {
     proses_fcfs data;
 
-    cout << "Test Masukan Head :  ";
+    cout << "Masukan Head Yang Anda Inginkan :  ";
     cin >> data.head;
 
-    cout << "test brpa array? :  ";
+    cout << "Masukan Kolom Yang Anda Inginkan  :  ";
     cin >> data.jumlah;
 
     for (int i = 0; i < data.jumlah; i++) {
-        cout << "test  "<< i + 1 << ": ";
+        cout << "Kolom "<< i + 1 << " : ";
         cin >> data.request[i];
     }
 
@@ -42,6 +43,27 @@ int banyak_data() {
 }
 
 int main(){
-    cout << "====================" << endl;
-    banyak_data();
+    int pilihan;
+
+    cout << "==================================="<< endl;
+    cout << "Wellcome Program By : Palaguna" << endl;
+    cout << "==================================="<< endl;
+    cout << "DAFTAR MENU " << endl;
+    cout << "==================================="<< endl;
+    do {
+        cout << "(1). Mulai Program" << endl;
+        cout << "(2). Hentikan Program" << endl;
+        cout << "Pilihan Mu : ";
+        cin >> pilihan;
+
+        switch (pilihan){
+            case 1:
+                banyak_data();
+                break;
+            case 2:
+                cout << "Terimakasih !";
+                break;
+        }
+    }while(pilihan != 2);
+
 }
